@@ -8,12 +8,9 @@ MAINTAINER Nick Poorman <mail@nickpoorman.com>
 RUN apt-get update && \
     apt-get install -y \
       openjdk-7-jre-headless \
+      scala \
       curl \
       wget
-
-# install scala deps
-RUN apt-get build-dep -y \
-    scala
 
 # install scala 2.10.5
 RUN cd /tmp && \
