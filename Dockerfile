@@ -5,21 +5,25 @@
 FROM debian:wheezy
 MAINTAINER Nick Poorman <mail@nickpoorman.com>
 
+# remove scala if it's already installed
+RUN apt-get remove -y \
+    scala-library \
+    scala
+
 RUN apt-get update && \
     apt-get install -y \
       openjdk-7-jre-headless \
       curl \
       wget
 
-# remove scala if it's already installed
-RUN apt-get remove -y \
-    scala-library \
-    scala
+# install scala deps
+RUN apt-get install -y \
+    libjansi-java
 
 # install scala 2.10.5
 RUN cd /tmp && \
     wget http://downloads.typesafe.com/scala/2.10.5/scala-2.10.5.deb && \
-    dpkg -i scala-2.10.5.deb && \
+    dpkg -i -f scala-2.10.5.deb && \
     rm -f scala-2.10.5.deb
 
 RUN mkdir /tmp/spark && \
