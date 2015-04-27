@@ -5,11 +5,6 @@
 FROM debian:wheezy
 MAINTAINER Nick Poorman <mail@nickpoorman.com>
 
-# remove scala if it's already installed
-RUN apt-get remove -y \
-    scala-library \
-    scala
-
 RUN apt-get update && \
     apt-get install -y \
       openjdk-7-jre-headless \
