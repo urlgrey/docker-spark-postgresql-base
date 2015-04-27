@@ -12,8 +12,8 @@ RUN apt-get update && \
       wget
 
 # install scala deps
-RUN apt-get install -y \
-    libjansi-java
+RUN apt-get build-dep -y \
+    scala
 
 # install scala 2.10.5
 RUN cd /tmp && \
