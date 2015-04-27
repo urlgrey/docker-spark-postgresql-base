@@ -12,6 +12,10 @@ RUN apt-get update && \
       curl \
       wget
 
+RUN apt-get remove -y \
+    scala-library \
+    scala
+
 # install scala 2.10.5
 RUN cd /tmp && \
     wget http://downloads.typesafe.com/scala/2.10.5/scala-2.10.5.deb && \
