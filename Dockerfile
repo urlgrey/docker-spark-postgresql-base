@@ -18,7 +18,7 @@ RUN apt-get install -y \
 # install scala 2.10.5
 RUN cd /tmp && \
     wget http://downloads.typesafe.com/scala/2.10.5/scala-2.10.5.deb && \
-    dpkg -i -f scala-2.10.5.deb && \
+    dpkg -i scala-2.10.5.deb && \
     rm -f scala-2.10.5.deb
 
 RUN mkdir /tmp/spark && \
