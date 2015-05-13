@@ -22,8 +22,8 @@ RUN cd /tmp && \
     dpkg -i scala-2.10.5.deb && \
     rm -f scala-2.10.5.deb
 
-RUN mkdir /tmp/spark && \
-    wget -qO- http://storage.googleapis.com/ng-ml-storage/spark-1.3.2-SNAPSHOT-bin-2.4.0.tgz | tar -xz -C /tmp/spark --strip-components=1
+RUN mkdir -p /spark && \
+    wget -qO- http://storage.googleapis.com/ng-ml-storage/spark-1.3.2-SNAPSHOT-bin-2.4.0.tgz | tar -xz -C /spark --strip-components=1
 
 ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 RUN update-alternatives --set java /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
