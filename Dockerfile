@@ -24,7 +24,7 @@ RUN cd /tmp && \
     dpkg -i scala-2.10.5.deb && \
     rm -f scala-2.10.5.deb
 
-LABEL SPARK_BUILD=0.0.6
+LABEL SPARK_BUILD=0.0.7
 
 RUN mkdir -p /spark && \
     wget -qO- http://storage.googleapis.com/ng-ml-storage/spark-1.3.2-SNAPSHOT-bin-2.4.0.tgz | tar -xz -C /spark --strip-components=1
