@@ -35,8 +35,9 @@ RUN cd /tmp && \
     dpkg -i scala-2.10.5.deb && \
     rm -f scala-2.10.5.deb
 
-RUN apt-get install -y \
-     sbt
+RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
+    apt-get update && \
+    apt-get install sbt
 
 LABEL SPARK_BUILD=0.0.7
 
